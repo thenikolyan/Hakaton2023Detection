@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+opencv-python
+tensorflow>=2.14.0,<2.15.0
+ultralytics>=8.0.196
+Flask==2.1.2
+=======
+opencv-python
+tensorflow>=2.14.0,<2.15.0
+ultralytics>=8.0.196
+Flask==2.1.2
+>>>>>>> dde1538 (add all)
+Werkzeug==2.1.1

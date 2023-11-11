@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask App</title>
+    <style>
+        .video-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .video-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Загрузка файла</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <br>
+        <input type="checkbox" name="bool_option" value="true">Сохранить видео<br>
+        <input type="text" name="float_value" placeholder="Введите коэффициент уверенности">
+        <br>
+        <input type="submit" value="Загрузить">
+    </form>
+
+    {% if filename %}
+        <div class="video-container">
+            <h2>Трансляция видео</h2>
+            <img src="{{ url_for('video_feed', filename=filename, bo=bool_option, fo=float_value) }}" alt="Video stream">
+        </div>
+    {% endif %}
+</body>
+</html>
